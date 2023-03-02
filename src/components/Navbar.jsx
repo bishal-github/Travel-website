@@ -6,10 +6,16 @@ const Navbar = () => {
 
 const handleNav=()=>{
     setNav(!nav);
+
+    if(!nav){
+      document.body.style.overflow = 'hidden';
+    }else{
+      document.body.style.overflow = 'scroll';
+    }
 }
 
   return (
-    <div className='absolute w-full flex justify-between p-4 items-center overflow-hidden'> 
+    <div className='absolute w-full flex justify-between p-4 items-center'> 
         <h1 className='text-white
         font-bold text-2xl z-20'>Experiences</h1>
         <HiMenuAlt3 onClick={handleNav} className='z-20 text-white cursor-pointer' size={30} />
